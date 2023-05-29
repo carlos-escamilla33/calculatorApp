@@ -1,0 +1,8 @@
+:root {
+    --grid-columns: 1;
+    --grid-rows: 1;
+}
+
+* {
+    box-sizing: border box;
+}
