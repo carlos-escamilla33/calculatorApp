@@ -1,6 +1,5 @@
 class Calculator {
     constructor() {
-        this.color = color;
     }
 
     calcAdd(num1, num2) {
@@ -19,7 +18,22 @@ class Calculator {
         return num1 * num2;
     }
 
-    createButtons() {
-        const calcBody = document.querySelector("#calculator");
+    createButtons(rows, cols) {
+        const calcBody = document.querySelector(".keys");
+        calcBody.style.setProperty("--grid-rows", rows);
+        calcBody.style.setProperty("--grid-columns", cols);
+
+        for (let i = 0; i < (rows * cols); i++) {
+            const circle = document.createElement("btn");
+            circle.classList.add("circle");
+            calcBody.append(circle);
+        }
     }
 }
+
+const main  = () => {
+    let iphoneCalc = new Calculator();
+    iphoneCalc.createButtons(5, 4);
+}
+
+main();
