@@ -1,5 +1,10 @@
 class Calculator {
     constructor() {
+        this.symbols = ["AC", "+/-", "%", "÷",
+                        7, 8, 9, "x", 4, 5, 6,
+                        "-", 1, 2, 3, "+", 0,
+                        ".", "="
+                    ];
     }
 
     calcAdd(num1, num2) {
@@ -18,13 +23,12 @@ class Calculator {
         return num1 * num2;
     }
 
-    createButtons(rows, cols) {
+    createButtons() {
         const calcBody = document.querySelector(".keys");
-        calcBody.style.setProperty("--grid-rows", rows);
-        calcBody.style.setProperty("--grid-columns", cols);
 
-        for (let i = 0; i < (rows * cols); i++) {
+        for (let i = 0; i < this.symbols.length; i++) {
             const circle = document.createElement("btn");
+            circle.innerHTML = this.symbols[i];
             circle.classList.add("circle");
             calcBody.append(circle);
         }
@@ -33,7 +37,7 @@ class Calculator {
 
 const main  = () => {
     let iphoneCalc = new Calculator();
-    iphoneCalc.createButtons(5, 4);
+    iphoneCalc.createButtons();
 }
 
 main();
