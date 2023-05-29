@@ -28,12 +28,15 @@ body {
 .result {
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: end;
+    /* justify-content: flex-end; */
     color: white;
 }
 
 .result p {
-    font-size: 90px;
+    font-size: 100px;
+    padding: 30px;
+    margin-bottom: 0px;
 }
 
 .keys {
@@ -44,7 +47,8 @@ body {
     grid-row-gap: 5px;
     grid-column-gap: 5px;
     height: 50%;
-    padding: 15px;
+    padding: 10px;
+    padding-bottom: 50px;
 }
 
 .circle {
